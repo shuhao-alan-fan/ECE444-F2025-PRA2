@@ -33,7 +33,7 @@ def index():
                 flash('Looks like you have changed your email!')
             session['name'] = form.name.data
             session['email'] = email_input
-            
+
             return redirect(url_for('index'))
     return render_template(
         'index.html',
@@ -47,3 +47,10 @@ def index():
 @app.route('/user/<name>')
 def user(name):
     return render_template('user.html', name=name)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
+
+print("hello world")
